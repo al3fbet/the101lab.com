@@ -1,0 +1,35 @@
+
+#enterButton {
+    background-color: #ffcc00; /* Adjust the background color as needed */
+    color: #ffffff; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px; /* Adjust spacing from the glowing text */
+  }
+  
+  #enterButton:hover {
+    background-color: #ffdb4d; /* Change color on hover */
+  }
+#binaryWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    word-wrap: break-word;
+    z-index: -1;
+    background-color: #000000;
+}
+.binaryDigit {
+    color: #222222;
+    transition: color 1s ease-in;
+}
+.binaryDigitColored {
+    color:gold;
+    transition: color 1s ease-out;
+}
+

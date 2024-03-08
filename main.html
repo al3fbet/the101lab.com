@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 101 Lab</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Add any additional meta tags, links to external stylesheets, or scripts here -->
+</head>
+<body>
+    <header>
+        <div class="left-menu">
+            <span id="current-date-time"></span>
+        </div>
+        <div class="right-menu">
+            <a href="#"><i class="fas fa-envelope"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </header>
+
+    <div class="banner">
+        <h1>The 101 Lab</h1>
+    </div>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Home</a>
+                <ul>
+                    <li><a href="main.html" id="main-link">Main</a></li>
+                 
+                </ul>
+            </li>
+            
+        
+            <li>
+                <a href="#">News</a>
+                <ul>
+                    <li><a href="infosec.html" id="infosec-link">InfoSec</a></li>
+                    <li><a href="exploits.html" id="exploits-link">Exploits</a></li>
+                    <li><a href="updates.html" id="updates-link">Updates</a></li>
+                    <li><a href="about.html" id="about-link">About Us</a></li>
+                </ul>
+            </li>
+            
+            
+            <li>
+                <a href="#">Lab 101</a>
+                <ul>
+                    <li><a href="projects.html" id="projects-link">Projects</a></li>
+                    <li><a href="videos.html" id="videos-link">Videos</a></li>
+                    <li><a href="images.html" id="images-link">Images</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="#">Learn</a>
+                <ul>
+                    <li><a href="dojo.html" id="dojo-link">Dojo</a></li>
+                    <li><a href="ctf.html" id="ctf-link">CTF</a></li>
+                    <li><a href="bughunt.html" id="bughunt-link">Bug Hunt</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="#">Shop</a>
+                <ul>
+                    <li><a href="merch.html" id="merch-link">Merch</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">Chat</a>
+                <ul>
+                    <li><a href="discord.html" id="discord-link">Discord</a></li>
+                    <li><a href="irc.html" id="irc-link">IRC</a></li>
+                    <li><a href="pidgin.html" id="pidgin-link">Pidgin</a></li>
+                </ul>
+            </li>
+            
+        </ul>
+    </nav>
+
+    <div class="news-ticker">
+        <!-- JavaScript or server-side code to fetch and display news -->
+    </div>
+
+    <div class="content">
+        <!-- Content of the website goes here -->
+    </div>
+
+    <footer>
+        <p>&copy; The 101 Lab, 2024</p>
+    </footer>
+
+    <script>
+        // JavaScript to display current date and time
+        function displayDateTime() {
+            var now = new Date();
+            var dateTimeString = now.toLocaleString(); // You can format the date and time as needed
+            document.getElementById('current-date-time').textContent = dateTimeString;
+        }
+    
+        // Update the current date and time every second
+        setInterval(displayDateTime, 1000);
+    
+        // Function to load Discord page content
+        function loadDiscordPage() {
+            var discordLink = document.getElementById('discord-link');
+            var contentContainer = document.querySelector('.content');
+               
+            var parentListItem = discordLink.parentNode;
+            
+            parentListItem.addEventListener('click', function(event) {
+                if (event.target === discordLink) {
+                    event.preventDefault(); // Prevent default link behavior
+    
+                    // Fetch the content of the Discord page
+                    fetch('discord.html')
+                        .then(response => response.text())
+                        .then(html => {
+                            // Replace the content of the content container with Discord page content
+                            contentContainer.innerHTML = html;
+                        })
+                        .catch(error => console.error('Error loading Discord page:', error));
+                }
+            });
+        }
+    
+        // Call the function to load Discord page content
+        loadDiscordPage();
+    </script>
+</body>
+</html>
+
